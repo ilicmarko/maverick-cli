@@ -1,6 +1,6 @@
 # Maverick CLI
 
-![CLI Logo](logo.png)
+![CLI Logo](https://raw.githubusercontent.com/ilicmarko/maverick-cli/master/logo.png)
 
 Maverick CLI lets you create a scaffolding for your next project with ease. Maverick CLI is based on a popular [Yeoman](http://yeoman.io/) generator [**webapp**](https://github.com/yeoman/generator-webapp), with some changes.
 

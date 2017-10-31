@@ -1,0 +1,14 @@
+block vars
+include ../inc/_vars
+doctype html
+html
+	head
+		title #{pageTitle}#{pageSeparator}#{title}
+		include ../inc/_header
+		block header
+	body(id=`${slugify(pageTitle)}` class="open")
+		include ../inc/_nav
+		.wrapper
+			block content
+			section.c-section-mobile-app
+			include ../inc/_footer

@@ -1,0 +1,24 @@
+-
+  var nav = [
+    {
+      name: 'Home',
+      link: 'index.html', 
+    },
+    {
+      name: 'About',
+      link: 'about.html', 
+    },
+    {
+      name: 'Who we are',
+      link: 'who.html',
+    },
+    {
+      name: 'Contact',
+      link: 'contact.html',
+    }
+  ];
+
+nav.c-main-nav
+      each item in nav
+          li.c-main-nav__item
+            a(class=(item.name == pageTitle)? 'c-main-nav__link--active' : '' href=item.link).c-main-nav__link=item.name

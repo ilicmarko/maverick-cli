@@ -1,0 +1,61 @@
+// ---------------------------------------------
+// 			Colors
+// ---------------------------------------------
+
+$brand-primary:			#fff !default;
+$brand-secondary:		#000 !default;
+
+$brand-success:			#39b54a !default;
+$brand-error:			#f04e4e !default;
+
+$body-bg:				#f1f2f4 !default;
+
+$image-path:			'../images' !default;
+
+// ---------------------------------------------
+// 			Type
+// ---------------------------------------------
+
+$global-font-family:	'Lato', sans-serif !default;
+$global-font-size:    	16px !default;
+$global-font-color:		#636363 !default;
+$global-line-height:  	24px !default;
+$global-font-secondary:	'Montserrat', sans-serif !default;
+
+$heading-font-family:	$global-font-secondary;
+
+$font-size-h1:  		42px !default;
+$font-size-h2:  		36px !default;
+$font-size-h3:  		24px !default;
+$font-size-h4: 			20px !default;
+$font-size-h5:  		18px !default;
+$font-size-h6:  		16px !default;
+
+
+// ---------------------------------------------
+// 			GRID
+// ---------------------------------------------
+
+$grid-breakpoints: (
+	xs: 0,
+	sm: 544px,
+	md: 768px,
+	lg: 992px,
+	xl: 1200px
+) !default;
+
+$container-max-widths: (
+	sm: 95%,
+	md: 95%,
+	lg: 98%,
+	xl: 1140px
+) !default;
+
+$grid-columns:               12  !default;
+$grid-gutter-width:          1.875rem !default;
+
+// ---------------------------------------------
+// 			Footer
+// ---------------------------------------------
+
+$footer-bg:         #151515;

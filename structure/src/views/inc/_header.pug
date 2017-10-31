@@ -1,0 +1,38 @@
+meta(charset="utf-8")
+meta(http-equiv="X-UA-Compatible", content="IE=edge")
+meta(name="description", content="This is an awesome website.")
+meta(name="keywords", content="website, awesome")
+meta(name="apple-mobile-web-app-capable", content="yes")
+meta(name="apple-mobile-web-app-status-bar-style", content="black")
+meta(name="viewport", content="width=device-width, minimum-scale=1, maximum-scale=1, user-scalable=no, minimal-ui")
+meta(property="og:title", content=`${pageTitle}`)
+meta(property="og:image", content=`${siteImage}`)
+meta(property="og:site_name", content=`${pageTitle}`)
+meta(property="og:type", content="website")
+meta(property="og:url", content=`${siteURL}`)
+meta(property="og:locale", content="en_US")
+meta(property="og:description", content=`${siteDesc}`)
+meta(name="google", content="notranslate")
+
+meta(name="twitter:url", content=`${siteURL}`)
+meta(name="twitter:title", content=`${pageTitle}`)
+meta(name="twitter:description", content=`${siteDesc}`)
+meta(name="twitter:image", content=`${siteImage}`)
+include _favicon
+
+// build:css styles/vendor.css
+// bower:css
+// endbower
+// endbuild
+
+link(href="https://fonts.googleapis.com/css?family=Lato|Montserrat:400,700,800,900" rel="stylesheet")
+link(href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet")
+
+
+// build:css styles/main.css
+link(rel='stylesheet', href='styles/main.css')
+// endbuild
+
+// build:js scripts/vendor/modernizr.js
+script(src='/bower_components/modernizr/modernizr.js')
+// endbuild

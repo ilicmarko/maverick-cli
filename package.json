@@ -1,0 +1,26 @@
+{
+  "name": "maverick-cli",
+  "version": "1.0.0",
+  "description": "A simple CLI for scaffolding my projects.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "maverick": "bin/maverick.js",
+    "maverick-init": "bin/maverick-init.js",
+    "maverick-sass": "bin/maverick-sass.js"
+  },
+  "author": "Maverick",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^2.3.0",
+    "commander": "^2.11.0",
+    "execa": "^0.8.0",
+    "fs": "0.0.1-security",
+    "fs-extra": "^4.0.2",
+    "listr": "^0.13.0",
+    "path": "^0.12.7",
+    "slugify": "^1.2.1"
+  }
+}

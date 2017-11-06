@@ -60,9 +60,15 @@ Options argument is **required**.
 ```bash
 maverick scss -c "responsive-img"
 ```
-##  Pug @TODO
+##  Pug 
 
 `maverick pug [File name]` to create a pug page
+
+**Options:**
+
+* `-t` or `--title <title>` to add a title to the page
+
+If you don't provide the title it will be empty.
 
 ## Project Structure 
 

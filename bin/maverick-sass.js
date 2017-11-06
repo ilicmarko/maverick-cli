@@ -21,6 +21,7 @@ require('commander')
     .option('-e, --element', 'Napravi element')
     .option('-t, --tool', 'Napravi novu funkciju ili mixin')
     .option('-u, --utility', 'Napravi novi utility')
+    .option('-p, --plugin', 'New plugin')
     .parse(process.argv);
 
 /**
@@ -100,6 +101,7 @@ const sass = {
   elements: path.join(sassPath, '/elements'),
   tools: path.join(sassPath, '/tools'),
   utilities: path.join(sassPath, '/utilities')
+  plugins: path.join(sassPath, '/plugins')
 }
 
 /**

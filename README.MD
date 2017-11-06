@@ -52,7 +52,8 @@ Options argument is **required**.
 * `-c` or `--component` to add a component, *this also adds a css selector*.
 * `-e` or `--element` to add an element
 * `-t` or `--tool` to add a tool
-* `-u` or `utility` to add a utility
+* `-u` or `--utility` to add a utility
+* `-p` or `--plugin` to add a plugin
 
 **Example**
 
@@ -76,6 +77,7 @@ src
 │   ├───components
 │   ├───elements
 │   ├───generic
+│   ├───plugins
 │   ├───tools
 │   └───utilities
 └───views
@@ -90,6 +92,7 @@ This is where all the `.scss` files are found, gulp will watch for changes in th
 * `/components` - Complete chunks of UI, like *navigation, cards, panels* etc..
 * `/elements` - Unclassed HTML elements, like *a, h1, body, blockquote* etc..
 * `/generic` - Reset and normalize css.
+* `/plugins` - SCSS files from imported plugins, like *owl-carousel, popper* etc..
 * `/tools` - Mixins and functions
 * `/utilities` - Override and helper functions, they are usually high-priority *(!important)*
 

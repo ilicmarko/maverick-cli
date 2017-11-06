@@ -16,10 +16,16 @@ const isLocalPath = localPath.isLocalPath;
 const getTemplatePath = localPath.getTemplatePath
 const cliPath = path.join(path.dirname(fs.realpathSync(__filename)), '../');
 
+function help () {
+    program.parse(process.argv)
+    if (program.args.length < 1) return program.help()
+}
+help()
+
 const initMsg = chalk.gray('==========================================================================') +
                 chalk.yellow(
                     '\n' +
-                    '  Pocinje inicijalizacija template-a za front-end.' +
+                    '  Your front-end project is being created.' +
                     '\n'
                 ) +
                 chalk.gray('==========================================================================');
@@ -27,25 +33,20 @@ console.log(initMsg);
 
 program
   .usage('<project-path> [project-name]')
-  .option('-s, --skip-install', 'Preskoci istalaciju npm i bower paketa')
+  .option('-s, --skip-install', 'Skip bower and npm install')
   .parse(process.argv);
 
 const skipInstall = program.skipInstall;
 
 program.on('--help', () => {
     console.log('Primer:');
-    console.log(chalk.gray('# Pravljenje templata u trenutnom direktorijumu'));
+    console.log(chalk.gray('# Initializing project in the current directory'));
     console.log(chalk.green('$ maverick init "Moj Projekat"\n'));
-    console.log(chalk.gray('# Pravljenje templata u nekom direktorijumu'));
+    console.log(chalk.gray('# Initializing project in the another directory'));
     console.log(chalk.green('$ maverick init ./projects/mojprojekat "Moj Projekat" \n'));
 });
 
 
-function help () {
-    program.parse(process.argv)
-    if (program.args.length < 1) return program.help()
-}
-help()
 
 let argPath = program.args[0];
 const hasPath = argPath.indexOf('/') > -1 || program.args[1];
@@ -70,12 +71,12 @@ const filesToEdit = {
 
 const tasks = new Listr([
     {
-        title: 'Pravljenje strukture',
+        title: 'Creating project structure',
         task: () => fs.copy(path.join(cliPath, 'structure'), projectPath)
             .catch(err => console.error(err))
     }, 
     {
-        title: 'Izmena fajlova',
+        title: 'Replacing project name',
         task: () => {
             return new Listr([
                 {
@@ -110,13 +111,13 @@ const tasks = new Listr([
         }
     },
     {
-        title: 'Generisanje maverick fajla',
+        title: 'Generating `.maverick` file',
         task: () => {
             let now = new Date();
-            const data = 'Projekat napravljen od strane CLI-a \n' +
-                        'Projekat: ' + projectName + '\n'  +
-                        'Datum: ' + now.getDate() + '/' + (now.getMonth() + 1) + '/' + now.getFullYear() + '\n' +
-                        'CLI Verzija: ' + require('../package.json').version;
+            const data = 'This project has been initialized by the Maverick CLI \n' +
+                        'Project: ' + projectName + '\n'  +
+                        'Date: ' + now.getDate() + '/' + (now.getMonth() + 1) + '/' + now.getFullYear() + '\n' +
+                        'CLI Version: ' + require('../package.json').version;
         
             fs.writeFile(path.join(projectPath, '.maverick'), data, (error) => {
                 if (error) {
@@ -127,13 +128,13 @@ const tasks = new Listr([
         }
     },
     {
-        title: 'Instalacija bower paketa',
-        skip: () => { if ( skipInstall ) return 'Izabrana opcija --skip-install'; },
+        title: 'Running bower install',
+        skip: () => { if ( skipInstall ) return 'Skipped because of the --skip-install flag'; },
         task: () => execa('bower', ['install'])
     },
     {
-        title: 'Instalacija npm paketa',
-        skip: () => { if ( skipInstall ) return 'Izabrana opcija --skip-install'; },
+        title: 'Running npm install',
+        skip: () => { if ( skipInstall ) return 'Skipped because of the --skip-install flag'; },
         task: () => execa('npm', ['install'], { cwd: projectPath })
     }
 ]);

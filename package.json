@@ -6,7 +6,8 @@
   "bin": {
     "maverick": "bin/maverick.js",
     "maverick-init": "bin/maverick-init.js",
-    "maverick-sass": "bin/maverick-sass.js"
+    "maverick-sass": "bin/maverick-sass.js",
+    "maverick-pug": "bin/maverick-pug.js"
   },
   "author": "Maverick",
   "license": "MIT",

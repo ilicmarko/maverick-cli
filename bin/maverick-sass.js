@@ -19,10 +19,10 @@ const projectPath = getTemplatePath('.');
 
 require('commander')
     .usage('[options] <name>')
-    .option('-c, --component', 'Napravi komponentu')
-    .option('-e, --element', 'Napravi element')
-    .option('-t, --tool', 'Napravi novu funkciju ili mixin')
-    .option('-u, --utility', 'Napravi novi utility')
+    .option('-c, --component', 'New component')
+    .option('-e, --element', 'New element')
+    .option('-t, --tool', 'New function or mixin')
+    .option('-u, --utility', 'New utility')
     .option('-p, --plugin', 'New plugin')
     .parse(process.argv);
 
@@ -32,10 +32,10 @@ require('commander')
  */
 
 program.on('--help', () => {
-  console.log(chalk.bold('\nPotrebno je navesti tacno jednu opciju'));
-  console.log('\nPrimer:');
-  console.log(chalk.gray('# Pravljenje componente'));
-  console.log(chalk.green('$ maverick sass -c moja-komponenta\n'));
+  console.log(chalk.red.bold('\nAn option is required'));
+  console.log('\nExample:');
+  console.log(chalk.gray('# Creating a new component'));
+  console.log(chalk.green('$ maverick sass -c my-component\n'));
 });
 
 
@@ -55,12 +55,12 @@ const optionCount = Object.values(options).reduce( (count, val) => val === true 
 const fileName = program.args[0].toLowerCase();
 
 if (optionCount > 1) {
-  console.log(chalk.bold.red('Uneto vise od jedne opcije, moguce je uneti samo jednu opciju.'));
+  console.log(chalk.bold.red('You entered more than one option.'));
   process.exit(0);
 }
 
 if (optionCount < 1) {
-  console.log(chalk.bold.red('Mora da se unese bar jedna opcija'));
+  console.log(chalk.bold.red('You need to enter one option'));
   process.exit(0);
 }
 

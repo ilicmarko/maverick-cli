@@ -1,5 +1,7 @@
 # Maverick CLI
-[![Build Status](https://travis-ci.org/ilicmarko/maverick-cli.svg?branch=master)](https://travis-ci.org/ilicmarko/maverick-cli) [![npm version](https://badge.fury.io/js/maverick-cli.svg)](https://badge.fury.io/js/maverick-cli)![CLI Logo](https://raw.githubusercontent.com/ilicmarko/maverick-cli/master/logo.png)
+[![Build Status](https://travis-ci.org/ilicmarko/maverick-cli.svg?branch=master)](https://travis-ci.org/ilicmarko/maverick-cli) [![npm version](https://badge.fury.io/js/maverick-cli.svg)](https://badge.fury.io/js/maverick-cli) [![Dev dep](https://david-dm.org/ilicmarko/maverick-cli.svg)](https://david-dm.org/ilicmarko/maverick-cli)
+
+![CLI Logo](https://raw.githubusercontent.com/ilicmarko/maverick-cli/master/logo.png) 
 
 Maverick CLI lets you create a scaffolding for your next project with ease. Maverick CLI is based on a popular [Yeoman](http://yeoman.io/) generator [**webapp**](https://github.com/yeoman/generator-webapp), with some changes.
 

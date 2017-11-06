@@ -17,7 +17,7 @@ Maverick CLI lets you create a scaffolding for your next project with ease. Mave
 * Awesome image optimization
 * Automagically wire-up dependencies installed with [Bower](http://bower.io)
 
-## Instalation
+## Installation
 
 On macOS, Linux, or Windows run the following:
 
@@ -74,7 +74,7 @@ If you don't provide the title it will be empty.
 
 ## Project Structure 
 
-There is a well defined project structure that must be respected
+There is a well-defined project structure that must be respected
 
 ```
 src
@@ -108,9 +108,9 @@ This is where all the `.scss` files are found, gulp will watch for changes in th
 
 **Views folder**
 
-This is where all the `.pug` files are found, gulp will watch for changed in this folder.
+This is where all the `.pug` files are found, gulp will watch for changes in this folder.
 
-* `inc` - Page parts that are included by a template, like *header, footer, navigation* etc...
+* `inc` - Page parts that are included in a template, like *header, footer, navigation* etc...
 * `layouts`- Templates that are extended by the pages.
 
 In the root of the `views` is where the pages are located.

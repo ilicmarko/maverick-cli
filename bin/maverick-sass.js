@@ -5,6 +5,8 @@ const program = require('commander');
 const chalk = require('chalk');
 const path = require('path');
 const fs = require("fs-extra");
+const prompt = require('co-prompt');
+const co = require('co');
 const localPath = require('../lib/localPath');
 const { isCli } = require('../lib/checkCLI');
 
@@ -100,22 +102,45 @@ const sass = {
   components: path.join(sassPath, '/components'),
   elements: path.join(sassPath, '/elements'),
   tools: path.join(sassPath, '/tools'),
-  utilities: path.join(sassPath, '/utilities')
+  utilities: path.join(sassPath, '/utilities'),
   plugins: path.join(sassPath, '/plugins')
 }
 
 /**
  * Before I even do anything, we need to check if this is my CLI.
  */
+
 isCli()
   .then( () => {
       if ( program.component ) addComponent();
       if ( program.element ) addScssFile(sass.elements, 'elements');
       if ( program.tool ) addScssFile(sass.tools, 'tools');
       if ( program.utility ) addScssFile(sass.utilities, 'utilities');
+      if ( program.plugin ) addScssFile(sass.plugins, 'plugins');
     }
   )
-  .catch(error => console.log(chalk.red('Ovo nije maverick CLI')));
+  .catch(error => console.log(chalk.red('This project is not initialized by ') + chalk.bold('Maverick CLI')));
+
+/**
+ * Create a file in the directory and add it to global SCSS file.
+ * @param {String} filePath [Path to the component folder]
+ * @param {String} fileName [Name of the component]
+ * @param {String} rootFile [Global components file where the component should be imported]
+ * @param {String} data [Data that should be inserted in the file]
+ * @param {Char} component [Component prefix, defualt value is the first letter of `rootFile`]
+ */
+
+function createFileWithContent(filePath, fileName, rootFile, data = '', component = rootFile.charAt(0)) {
+  // Component path with the new filename
+  const componentPath = path.join(filePath, createFileName(component, fileName));
+  // Create a SCSS file with root class
+  fs.writeFile( componentPath , data)
+    .catch( err => console.error(err) );
+
+  // Add the created SCSS file to the global SCSS file
+  fs.appendFile(path.join(filePath, '_' + rootFile + '.scss'), createImport(component, fileName))
+    .catch ( err => console.log(err) );
+}
 
 /**
  * Add a SCSS component
@@ -124,25 +149,29 @@ isCli()
 function addComponent() {
   // Component prefix
   const component = 'c'
+  
   // Component path with the new filename
   const componentPath = path.join(sass.components, createFileName(component, fileName));
+
+  let data = 
+    '$root:    ' + createClass(component, fileName) + ';\n' +
+    '\n\n#{$root} {\n}';
 
   // Check if this component already exists
   fs.access( componentPath, fs.constants.F_OK, (err) => {
     if (err) {
-      let data = 
-                '$root:    ' + createClass(component, fileName) + ';\n' +
-                '\n\n#{$root} {\n}';
-
-      // Create a SCSS file with root class
-      fs.writeFile( componentPath , data)
-        .catch( err => console.error(err) );
-
-      // Add the created SCSS file to the global SCSS file
-      fs.appendFile(path.join(sass.components, '_components.scss'), createImport(component, fileName))
-      .catch ( err => console.log(err) );
-    }
-    else console.log(chalk.red('Ova komponenta vec postoji!!!'));
+      createFileWithContent(sass.components, fileName, 'components', data);
+    } else {
+      // Ask if the user wants to overwrite the existing file
+      co(function *(){
+        const answer = yield prompt.confirm(chalk.red('The file already exists. Do you want to overwrite it? (y/n) '));
+        if (answer) {
+          createFileWithContent(sass.components, fileName, 'components', data);
+        }
+        process.stdin.pause();
+        
+      });
+    } 
   });
 }
 
@@ -159,14 +188,19 @@ function addScssFile(folder, rootFile, component = rootFile.charAt(0) ) {
   // Check if this element already exists
   fs.access( elementPath, fs.constants.F_OK, (err) => {
     if (err) {
-      // Create a SCSS file
-      fs.writeFile( elementPath , '')
-        .catch( err => console.error(err) );
-
-      // Add the created SCSS file to the global SCSS file
-      fs.appendFile(path.join(folder, '_' + rootFile + '.scss'), createImport(component, fileName))
-      .catch ( err => console.log(err) );
+      createFileWithContent(folder, fileName, rootFile);
     }
-    else console.log(chalk.red('Ovaj fajl vec postoji!!!'));
+    else {
+      // Ask if the user wants to overwrite the existing file
+      co(function *(){
+        const answer = yield prompt.confirm(chalk.red('The file already exists. Do you want to overwrite it? (y/n) '));
+        if (answer) {
+          createFileWithContent(folder, fileName, rootFile);
+        }
+        process.stdin.pause();
+        
+      });
+
+    } 
   });
 }

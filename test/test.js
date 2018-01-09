@@ -2,16 +2,16 @@ var assert = require('assert');
 var chai = require('chai');
 var expect = chai.expect;
 var cli = require("../lib/checkCLI");
-const { getTemplatePath } = require('../lib/localPath');
+var cliPath = require('../lib/localPath');
 
-const fs = require('fs');
-const path = require('path');
+var fs = require('fs');
+var path = require('path');
 
 chai.should();
 chai.use(require('chai-as-promised'));
 chai.use(require('chai-fs'));
 
-const maverickFile = path.join(getTemplatePath('.'), '.maverick');
+var maverickFile = path.join(cliPath.getTemplatePath('.'), '.maverick');
 
 describe('It has to have a maverick file', () => {
 	it('should allow to write a .maverick file', () => {

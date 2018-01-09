@@ -10,7 +10,8 @@
     "maverick-pug": "bin/maverick-pug.js"
   },
   "scripts": {
-    "test": "mocha test/test.js"
+    "test": "mocha test/test.js",
+    "coveralls": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
   },
   "author": "Maverick",
   "license": "MIT",
@@ -30,6 +31,8 @@
     "chai": "^4.1.2",
     "chai-as-promised": "^7.1.1",
     "chai-fs": "^2.0.0",
+    "coveralls": "^3.0.0",
+    "istanbul": "^0.4.5",
     "mocha": "^4.1.0"
   }
 }

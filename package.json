@@ -9,6 +9,9 @@
     "maverick-sass": "bin/maverick-sass.js",
     "maverick-pug": "bin/maverick-pug.js"
   },
+  "scripts": {
+    "test": "mocha test/test.js"
+  },
   "author": "Maverick",
   "license": "MIT",
   "dependencies": {
@@ -22,5 +25,10 @@
     "listr": "^0.13.0",
     "path": "^0.12.7",
     "slugify": "^1.2.1"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "chai-as-promised": "^7.1.1",
+    "mocha": "^4.1.0"
   }
 }

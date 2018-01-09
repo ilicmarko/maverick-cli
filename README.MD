@@ -1,5 +1,5 @@
 # Maverick CLI
-[![Build Status](https://travis-ci.org/ilicmarko/maverick-cli.svg?branch=master)](https://travis-ci.org/ilicmarko/maverick-cli) [![npm version](https://badge.fury.io/js/maverick-cli.svg)](https://badge.fury.io/js/maverick-cli) [![Dev dep](https://david-dm.org/ilicmarko/maverick-cli.svg)](https://david-dm.org/ilicmarko/maverick-cli)
+[![Build Status](https://travis-ci.org/ilicmarko/maverick-cli.svg?branch=master)](https://travis-ci.org/ilicmarko/maverick-cli) [![npm version](https://badge.fury.io/js/maverick-cli.svg)](https://badge.fury.io/js/maverick-cli) [![Dev dep](https://david-dm.org/ilicmarko/maverick-cli.svg)](https://david-dm.org/ilicmarko/maverick-cli) [![Coverage Status](https://coveralls.io/repos/github/ilicmarko/maverick-cli/badge.svg?branch=master)](https://coveralls.io/github/ilicmarko/maverick-cli?branch=master)
 
 ![CLI Logo](https://raw.githubusercontent.com/ilicmarko/maverick-cli/master/logo.png) 
 

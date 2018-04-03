@@ -37,7 +37,7 @@ npm install -g maverick-cli
 
 ### Init
 
-`maverick init <path> [Project name] [options]` - to scaffold your webapp *(<path> is optinal)*
+`maverick init <path> [Project name] [options]` - to scaffold your webapp *(<path> is optional)*
 
 **Options**:
 

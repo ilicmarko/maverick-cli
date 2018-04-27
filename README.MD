@@ -37,15 +37,15 @@ npm install -g maverick-cli
 
 ### Init
 
-`maverick init <path> [Project name] [options]` - to scaffold your webapp *(<path> is optinal)*
+`maverick init <path> [Project name] [options]` - to scaffold your webapp *(<path> is optional)*
 
 **Options**:
 
 `--skip-install` to skip the execution of `bower` and `npm` installation after scaffolding.
 
-### SCSS
+### SASS
 
-`maverick scss [options] [File name]` - create a SCSS file.
+`maverick sass [options] [File name]` - create a SCSS file.
 
 **Options:**
 
@@ -60,7 +60,7 @@ Options argument is **required**.
 **Example**
 
 ```bash
-maverick scss -c "responsive-img"
+maverick sass -c "responsive-img"
 ```
 ##  Pug 
 

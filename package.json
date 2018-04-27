@@ -16,16 +16,16 @@
   "author": "Maverick",
   "license": "MIT",
   "dependencies": {
-    "chalk": "^2.3.0",
+    "chalk": "^2.4.1",
     "co": "^4.6.0",
     "co-prompt": "^1.0.0",
-    "commander": "^2.11.0",
+    "commander": "^2.15.1",
     "execa": "^0.8.0",
     "fs": "0.0.1-security",
     "fs-extra": "^4.0.2",
     "listr": "^0.13.0",
     "path": "^0.12.7",
-    "slugify": "^1.2.1"
+    "slugify": "^1.2.9"
   },
   "devDependencies": {
     "chai": "^4.1.2",

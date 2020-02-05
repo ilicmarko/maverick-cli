@@ -1,38 +1,43 @@
 {
-  "name": "maverick-cli",
-  "version": "1.3.0",
-  "description": "A simple CLI for scaffolding my projects.",
-  "main": "index.js",
-  "bin": {
-    "maverick": "bin/maverick.js",
-    "maverick-init": "bin/maverick-init.js",
-    "maverick-sass": "bin/maverick-sass.js",
-    "maverick-pug": "bin/maverick-pug.js"
-  },
-  "scripts": {
-    "test": "mocha test/test.js",
-    "coveralls": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
-  },
-  "author": "Maverick",
-  "license": "MIT",
-  "dependencies": {
-    "chalk": "^2.4.1",
-    "co": "^4.6.0",
-    "co-prompt": "^1.0.0",
-    "commander": "^2.15.1",
-    "execa": "^1.0.0",
-    "fs": "0.0.2",
-    "fs-extra": "^7.0.0",
-    "listr": "^0.14.0",
-    "path": "^0.12.7",
-    "slugify": "^1.2.9"
-  },
-  "devDependencies": {
-    "chai": "^4.1.2",
-    "chai-as-promised": "^7.1.1",
-    "chai-fs": "^2.0.0",
-    "coveralls": "^3.0.0",
-    "istanbul": "^0.4.5",
-    "mocha": "^4.1.0"
-  }
+    "name": "maverick-cli",
+    "version": "1.3.0",
+    "description": "A simple CLI for scaffolding my projects.",
+    "main": "index.js",
+    "bin": {
+        "maverick": "bin/maverick.js",
+        "maverick-init": "bin/maverick-init.js",
+        "maverick-sass": "bin/maverick-sass.js",
+        "maverick-pug": "bin/maverick-pug.js"
+    },
+    "scripts": {
+        "test": "mocha test/test.js",
+        "coveralls": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
+    },
+    "homepage": "https://github.com/ilicmarko/maverick-cli#readme",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ilicmarko/maverick-cli"
+    },
+    "author": "Maverick",
+    "license": "MIT",
+    "dependencies": {
+        "chalk": "^2.4.1",
+        "co": "^4.6.0",
+        "co-prompt": "^1.0.0",
+        "commander": "^2.15.1",
+        "execa": "^1.0.0",
+        "fs": "0.0.2",
+        "fs-extra": "^7.0.0",
+        "listr": "^0.14.0",
+        "path": "^0.12.7",
+        "slugify": "^1.2.9"
+    },
+    "devDependencies": {
+        "chai": "^4.1.2",
+        "chai-as-promised": "^7.1.1",
+        "chai-fs": "^2.0.0",
+        "coveralls": "^3.0.0",
+        "istanbul": "^0.4.5",
+        "mocha": "^4.1.0"
+    }
 }

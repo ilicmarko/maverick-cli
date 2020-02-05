@@ -1,7 +1,25 @@
-# Maverick CLI
-[![Build Status](https://travis-ci.org/ilicmarko/maverick-cli.svg?branch=master)](https://travis-ci.org/ilicmarko/maverick-cli) [![npm version](https://badge.fury.io/js/maverick-cli.svg)](https://badge.fury.io/js/maverick-cli) [![Dev dep](https://david-dm.org/ilicmarko/maverick-cli.svg)](https://david-dm.org/ilicmarko/maverick-cli) [![Coverage Status](https://coveralls.io/repos/github/ilicmarko/maverick-cli/badge.svg?branch=master)](https://coveralls.io/github/ilicmarko/maverick-cli?branch=master)
+<p align="center">
+  <img width="500" src="https://raw.githubusercontent.com/ilicmarko/maverick-cli/master/logo.png" alt="Maverick CLI Logo">
+</p>
 
-![CLI Logo](https://raw.githubusercontent.com/ilicmarko/maverick-cli/master/logo.png) 
+<p align="center">
+    <a href="https://travis-ci.org/ilicmarko/maverick-cli">
+        <img src="https://travis-ci.org/ilicmarko/maverick-cli.svg?branch=master" alt="Build Status" />
+    </a>
+    <a href="https://badge.fury.io/js/maverick-cli">
+        <img src="https://badge.fury.io/js/maverick-cli.svg" alt="npm version" />
+    </a>
+    <a href="https://david-dm.org/ilicmarko/maverick-cli">
+        <img src="https://david-dm.org/ilicmarko/maverick-cli.svg" alt="Dev dep" />
+    </a>
+    <a href="https://coveralls.io/github/ilicmarko/maverick-cli?branch=master">
+        <img src="https://coveralls.io/repos/github/ilicmarko/maverick-cli/badge.svg?branch=master" alt="Coverage Status" />
+    </a>
+</p>
+
+<h2 align="center">Maverick CLI</h2>
+<hr>
+
 
 Maverick CLI lets you create a scaffolding for your next project with ease. Maverick CLI is based on a popular [Yeoman](http://yeoman.io/) generator [**webapp**](https://github.com/yeoman/generator-webapp), with some changes.
 
